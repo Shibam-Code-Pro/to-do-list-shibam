@@ -2,6 +2,12 @@
 
 A beautiful, responsive to-do list application built with vanilla HTML, CSS, and JavaScript. This project is designed to be **beginner-friendly** with extensive comments and clear code structure for learning purposes.
 
+
+## 🚀 Live Demo
+
+[View Live To Do List](https://Shibam-Code-Pro.github.io/to-do-list-shibam)
+
+
 ## ✨ Features
 
 - **Add Tasks** - Quick task creation with enter key support
@@ -139,3 +145,15 @@ This project welcomes contributions, especially those that improve the learning 
 ## 📝 License
 
 This project is open source and available under the MIT License. Perfect for learning, modifying, and sharing!
+
+---
+
+## 📞 Contact
+
+- **Email**: Connect-With-Shibam@outlook.com
+- **LinkedIn**: [linkedin.com/in/shibam-webdev](https://linkedin.com/in/shibam-webdev)
+- **GitHub**: [github.com/Shibam-Code-Pro](https://github.com/Shibam-Code-Pro)
+
+---
+
+⭐ If you found this project helpful, please give it a star on GitHub!
