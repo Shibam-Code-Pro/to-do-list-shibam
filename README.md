@@ -5,7 +5,7 @@ A beautiful, responsive to-do list application built with vanilla HTML, CSS, and
 
 ## 🚀 Live Demo
 
-[View Live To Do List](https://Shibam-Code-Pro.github.io/to-do-list-shibam)
+[View Live To Do List](https://to-do-list-shibam.netlify.app)
 
 
 ## ✨ Features
