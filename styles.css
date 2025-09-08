@@ -1,0 +1,524 @@
+/* =================================
+   CSS RESET - Remove default browser styles
+   ================================= */
+
+/* Make all elements use border-box sizing (easier to work with) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding from all elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* =================================
+   COLOR AND STYLE VARIABLES
+   Store all colors and sizes in one place for easy changes
+   ================================= */
+:root {
+  /* Main app colors */
+  --primary-color: #667eea;        /* Blue color for buttons and highlights */
+  --primary-dark: #5a67d8;         /* Darker blue for hover effects */
+  --success-color: #48bb78;        /* Green for completed tasks */
+  --danger-color: #f56565;         /* Red for delete buttons */
+  --warning-color: #ed8936;        /* Orange for edit buttons */
+  
+  /* Gray colors (light to dark) */
+  --gray-50: #f9fafb;             /* Very light gray */
+  --gray-100: #f3f4f6;            /* Light gray */
+  --gray-200: #e5e7eb;            /* Border gray */
+  --gray-300: #d1d5db;            /* Medium light gray */
+  --gray-400: #9ca3af;            /* Medium gray */
+  --gray-500: #6b7280;            /* Text gray */
+  --gray-600: #4b5563;            /* Dark gray */
+  --gray-700: #374151;            /* Darker gray */
+  --gray-800: #1f2937;            /* Very dark gray */
+  --gray-900: #111827;            /* Almost black */
+  --white: #ffffff;               /* Pure white */
+  
+  /* Border radius (rounded corners) */
+  --border-radius: 12px;          /* Large rounded corners */
+  --border-radius-sm: 8px;        /* Small rounded corners */
+  
+  /* Shadows for depth */
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Animation speed */
+  --transition: all 0.2s ease-in-out;
+}
+
+/* =================================
+   MAIN PAGE STYLING
+   ================================= */
+
+/* Style the entire page */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;                                    /* Space between lines of text */
+  color: var(--gray-800);                              /* Dark gray text color */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  /* Purple gradient background */
+  min-height: 100vh;                                   /* Full screen height */
+  padding: 1rem;                                       /* Space around the edges */
+}
+
+/* Main white box that contains everything */
+.container {
+  max-width: 600px;                    /* Don't get wider than 600px */
+  margin: 0 auto;                      /* Center it on the page */
+  background: var(--white);            /* White background */
+  border-radius: var(--border-radius); /* Rounded corners */
+  box-shadow: var(--shadow-lg);        /* Drop shadow for depth */
+  overflow: hidden;                    /* Hide anything that goes outside */
+}
+
+/* =================================
+   HEADER SECTION (Top of the app)
+   ================================= */
+
+/* Blue header with title */
+.header {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); /* Blue gradient */
+  color: var(--white);                     /* White text */
+  padding: 2rem;                          /* Space inside */
+  text-align: center;                     /* Center the text */
+}
+
+/* Main title "My To-Do List" */
+.app-title {
+  font-size: 2.5rem;                     /* Large text */
+  font-weight: 700;                       /* Bold text */
+  margin-bottom: 0.5rem;                  /* Space below */
+}
+
+/* Subtitle "Stay organized..." */
+.app-subtitle {
+  font-size: 1.1rem;                     /* Medium text size */
+  opacity: 0.9;                          /* Slightly transparent */
+  font-weight: 300;                       /* Light text weight */
+}
+
+/* =================================
+   ADD NEW TASK SECTION
+   ================================= */
+
+/* Section where user types new tasks */
+.add-todo-section {
+  padding: 2rem;                          /* Space inside */
+  border-bottom: 1px solid var(--gray-200); /* Line at bottom */
+}
+
+/* Container for input and button */
+.input-group {
+  display: flex;                          /* Put items side by side */
+  gap: 0.75rem;                          /* Space between input and button */
+  align-items: stretch;                   /* Make them same height */
+}
+
+/* Text input where user types task */
+.todo-input {
+  flex: 1;                               /* Take up remaining space */
+  padding: 0.875rem 1rem;               /* Space inside input */
+  border: 2px solid var(--gray-200);    /* Gray border */
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+  font-size: 1rem;                      /* Text size */
+  transition: var(--transition);         /* Smooth color changes */
+  background: var(--white);              /* White background */
+}
+
+/* When user clicks in input field */
+.todo-input:focus {
+  outline: none;                         /* Remove default outline */
+  border-color: var(--primary-color);   /* Blue border */
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); /* Blue glow */
+}
+
+/* "Add Task" button */
+.add-btn {
+  display: flex;                         /* Arrange icon and text */
+  align-items: center;                   /* Center vertically */
+  gap: 0.5rem;                          /* Space between + and text */
+  padding: 0.875rem 1.5rem;             /* Space inside button */
+  background: var(--primary-color);      /* Blue background */
+  color: var(--white);                   /* White text */
+  border: none;                          /* No border */
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+  font-size: 1rem;                      /* Text size */
+  font-weight: 600;                      /* Bold text */
+  cursor: pointer;                       /* Show hand cursor */
+  transition: var(--transition);         /* Smooth hover effects */
+  white-space: nowrap;                   /* Don't wrap text */
+}
+
+/* When user hovers over button */
+.add-btn:hover {
+  background: var(--primary-dark);       /* Darker blue */
+  transform: translateY(-1px);           /* Lift up slightly */
+}
+
+/* The "+" icon in the button */
+.add-icon {
+  font-size: 1.2rem;                    /* Slightly bigger */
+  font-weight: bold;                     /* Bold */
+}
+
+/* =================================
+   FILTER BUTTONS SECTION
+   ================================= */
+
+/* Section with All/Active/Completed buttons and task counter */
+.filters-section {
+  display: flex;                          /* Put buttons and counter side by side */
+  justify-content: space-between;         /* Push them to opposite ends */
+  align-items: center;                    /* Center vertically */
+  padding: 1.5rem 2rem;                  /* Space inside */
+  border-bottom: 1px solid var(--gray-200); /* Line at bottom */
+  background: var(--gray-50);             /* Light gray background */
+}
+
+/* Container for the three filter buttons */
+.filter-buttons {
+  display: flex;                          /* Put buttons side by side */
+  gap: 0.5rem;                          /* Space between buttons */
+}
+
+/* Individual filter button (All, Active, Completed) */
+.filter-btn {
+  padding: 0.5rem 1rem;                  /* Space inside button */
+  border: 1px solid var(--gray-300);     /* Gray border */
+  background: var(--white);              /* White background */
+  color: var(--gray-600);                /* Gray text */
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+  cursor: pointer;                        /* Show hand cursor */
+  transition: var(--transition);          /* Smooth hover effects */
+  font-size: 0.875rem;                   /* Small text */
+  font-weight: 500;                       /* Medium bold */
+}
+
+/* When user hovers over filter button */
+.filter-btn:hover {
+  border-color: var(--primary-color);    /* Blue border */
+  color: var(--primary-color);           /* Blue text */
+}
+
+/* The currently selected filter button */
+.filter-btn.active {
+  background: var(--primary-color);      /* Blue background */
+  color: var(--white);                   /* White text */
+  border-color: var(--primary-color);    /* Blue border */
+}
+
+/* Task counter text (e.g., "3 tasks remaining") */
+.todo-stats {
+  color: var(--gray-500);                /* Gray text */
+  font-size: 0.875rem;                   /* Small text */
+  font-weight: 500;                       /* Medium bold */
+}
+
+/* Todo List */
+.todo-list-section {
+  min-height: 300px;
+  position: relative;
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--gray-100);
+  transition: var(--transition);
+  background: var(--white);
+}
+
+.todo-item:hover {
+  background: var(--gray-50);
+}
+
+.todo-item.completed {
+  opacity: 0.6;
+}
+
+.todo-checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  accent-color: var(--success-color);
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--gray-500);
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.todo-item:hover .todo-actions {
+  opacity: 1;
+}
+
+.action-btn {
+  padding: 0.5rem;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+.edit-btn {
+  background: var(--warning-color);
+  color: var(--white);
+}
+
+.edit-btn:hover {
+  background: #dd7724;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background: var(--danger-color);
+  color: var(--white);
+}
+
+.delete-btn:hover {
+  background: #e53e3e;
+  transform: scale(1.05);
+}
+
+/* Empty State */
+.empty-state {
+  display: none;
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--gray-500);
+}
+
+.empty-state.show {
+  display: block;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  margin-bottom: 0.5rem;
+  color: var(--gray-600);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  width: 90%;
+  max-width: 500px;
+  transform: translateY(-20px);
+  transition: var(--transition);
+}
+
+.modal-overlay.show .modal {
+  transform: translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: var(--gray-800);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--gray-400);
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  background: var(--gray-100);
+  color: var(--gray-600);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  justify-content: flex-end;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: var(--gray-200);
+  color: var(--gray-700);
+}
+
+.btn-secondary:hover {
+  background: var(--gray-300);
+}
+
+/* Animations */
+.todo-item {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .container {
+    border-radius: 0;
+  }
+
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .header {
+    padding: 1.5rem;
+  }
+
+  .add-todo-section,
+  .filters-section {
+    padding: 1.5rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .filters-section {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+  }
+
+  .todo-item {
+    padding: 1rem 1.5rem;
+  }
+
+  .todo-actions {
+    opacity: 1;
+  }
+
+  .modal {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.75rem;
+  }
+
+  .add-todo-section,
+  .filters-section,
+  .todo-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .filter-buttons {
+    flex-wrap: wrap;
+  }
+}

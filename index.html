@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic page setup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern To-Do List</title>
+
+    <!-- Page description for search engines -->
+    <meta
+      name="description"
+      content="A modern, responsive to-do list app with local storage persistence"
+    />
+    <meta name="author" content="Your Name" />
+
+    <!-- Link to our CSS file for styling -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Main container for the entire app -->
+    <div class="container">
+      <!-- Top section with app title -->
+      <header class="header">
+        <h1 class="app-title">📝 My To-Do List</h1>
+        <p class="app-subtitle">Stay organized and productive</p>
+      </header>
+
+      <!-- Form to add new tasks -->
+      <section class="add-todo-section">
+        <form class="add-todo-form" id="addTodoForm">
+          <div class="input-group">
+            <!-- Input field where user types new task -->
+            <input
+              type="text"
+              id="todoInput"
+              placeholder="What needs to be done?"
+              class="todo-input"
+              required
+            />
+            <!-- Button to add the task -->
+            <button type="submit" class="add-btn">
+              <span class="add-icon">+</span>
+              Add Task
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Filter buttons and task counter -->
+      <section class="filters-section">
+        <!-- Buttons to filter tasks (All, Active, Completed) -->
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        <!-- Shows how many tasks are left -->
+        <div class="todo-stats">
+          <span id="todoCount">0 tasks remaining</span>
+        </div>
+      </section>
+
+      <!-- Main area where tasks are displayed -->
+      <section class="todo-list-section">
+        <!-- List that will contain all tasks -->
+        <ul class="todo-list" id="todoList">
+          <!-- Tasks will be added here by JavaScript -->
+        </ul>
+        <!-- Message shown when no tasks exist -->
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">📋</div>
+          <h3>No tasks yet</h3>
+          <p>Add a task above to get started!</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Pop-up window for editing tasks -->
+    <div class="modal-overlay" id="editModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h3>Edit Task</h3>
+          <!-- X button to close the edit window -->
+          <button class="close-btn" id="closeModal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- Form inside the edit window -->
+          <form id="editTodoForm">
+            <!-- Input field for editing task text -->
+            <input
+              type="text"
+              id="editTodoInput"
+              class="todo-input"
+              placeholder="Edit your task..."
+              required
+            />
+            <!-- Buttons to cancel or save changes -->
+            <div class="modal-actions">
+              <button type="button" class="btn btn-secondary" id="cancelEdit">
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Save Changes
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Link to our JavaScript file -->
+    <script src="todo.js"></script>
+  </body>
+</html>
