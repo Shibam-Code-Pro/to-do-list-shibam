@@ -1,6 +1,19 @@
 # 📝 Modern To-Do List - Beginner Friendly
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![LocalStorage](https://img.shields.io/badge/LocalStorage-FF6B6B?style=for-the-badge&logo=storage&logoColor=white)
+
 A beautiful, responsive to-do list application built with vanilla HTML, CSS, and JavaScript. This project is designed to be **beginner-friendly** with extensive comments and clear code structure for learning purposes.
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="screenshot/to-do-list-shibam.png" alt="Modern To-Do List Screenshot" width="700">
+  <p><em>Clean and modern to-do list interface with gradient background and intuitive controls</em></p>
+</div>
 
 ## ✨ Features
 
@@ -61,17 +74,30 @@ This code is specifically written to be **beginner-friendly**:
 - Template literals for dynamic HTML
 - Error handling with try-catch blocks
 
-## 📄 File Structure
+## 📁 Project Structure
 
 ```
 to-do-list-shibam/
-├── .gitignore          # Git ignore file for version control
-├── index.html          # Main HTML with beginner-friendly comments (3.8KB)
-├── styles.css          # CSS with detailed explanations (13.3KB)
-├── todo.js            # JavaScript with extensive comments (13.0KB)
-├── LICENSE            # MIT License for open source usage
-└── README.md          # This comprehensive documentation (4.5KB)
+├── 📄 index.html          # Main HTML with beginner-friendly comments (3.8KB)
+├── 🎨 styles.css          # CSS with detailed explanations (13.3KB)
+├── ⚡ todo.js            # JavaScript with extensive comments (13.0KB)
+├── 📸 screenshot/         # Project screenshots
+│   └── to-do-list-shibam.png
+├── 📖 README.md          # This comprehensive documentation (4.5KB)
+├── 📜 LICENSE            # MIT License for open source usage
+└── 🚫 .gitignore          # Git ignore file for version control
 ```
+
+## 🛠️ Technologies Used
+
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="40" height="40"/><br><b>HTML5</b></td>
+<td align="center"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="40" height="40"/><br><b>CSS3</b></td>
+<td align="center"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="40" height="40"/><br><b>JavaScript</b></td>
+<td align="center"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg" width="40" height="40"/><br><b>Bootstrap</b></td>
+</tr>
+</table>
 
 ### File Details
 - **index.html** - Clean HTML structure with semantic elements and accessibility features
