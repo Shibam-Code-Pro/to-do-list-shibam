@@ -15,6 +15,10 @@ A beautiful, responsive to-do list application built with vanilla HTML, CSS, and
   <p><em>Clean and modern to-do list interface with gradient background and intuitive controls</em></p>
 </div>
 
+## 🚀 Live Demo
+
+[View Live To-Do List](https://to-do-list-shibam.netlify.app/)
+
 ## ✨ Features
 
 - **Add Tasks** - Quick task creation with enter key support
