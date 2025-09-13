@@ -17,7 +17,7 @@ A beautiful, responsive to-do list application built with vanilla HTML, CSS, and
 
 ## 🚀 Live Demo
 
-[View Live Modern To-Do List](https://to-do-list-shibam.vercel.app)
+[View Modern To-Do List](https://to-do-list-shibam.vercel.app)
 
 ## ✨ Features
 
